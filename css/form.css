@@ -125,4 +125,16 @@ h1 {
   justify-content: space-between;
   align-items: center;
   max-width: 150px;
+}
+
+.empty {
+  display: none;
+}
+
+.empty_basket {
+  padding-left: 10%;
+}
+
+.warning {
+  display: none;
 }/*# sourceMappingURL=form.css.map */
