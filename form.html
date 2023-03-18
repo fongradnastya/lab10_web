@@ -99,7 +99,7 @@
                                         <p class="card-price">1999 р.</p>
                                         <div class="row g-0">
                                             <div class="col-md-3">
-                                                <select class="form-select" aria-label="Default select example">
+                                                <select class="form-select" aria-label="Default select example" name="size">
                                                     <option selected>Размер</option>
                                                     <option value="1">S</option>
                                                     <option value="2">M</option>
@@ -136,7 +136,7 @@
                                         <p class="card-price">4399 р.</p>
                                         <div class="row g-0">
                                             <div class="col-md-3">
-                                                <select class="form-select" aria-label="Default select example">
+                                                <select class="form-select" aria-label="Default select example" name="size">
                                                     <option selected>Размер</option>
                                                     <option value="1">S</option>
                                                     <option value="2">M</option>
@@ -178,17 +178,17 @@
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email адрес</label>
                                 <div class="group">
-                                    <input type="email" class="form-control email input-success" id="exampleInputEmail1"
+                                    <input type="email" class="form-control email" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" name="email" placeholder="Введите email">
                                     <i class="bi bi-check-circle-fill"></i>
                                     <div class="error-message"></div>
                                 </div>
-                                <label for="exampleInputEmail1" class="form-label">Номер телефона</label>
+                                <label for="inputTel" class="form-label">Номер телефона</label>
                                 <div class="group">
-                                    <input type="tel" class="form-control tel input-mistake" id="inputTel"aria-describedby="phonelHelp"
-                                        placeholder="Введите телефон" name="tel">
+                                    <input type="tel" class="form-control tel phone" id="inputTel" aria-describedby="phoneHelp"
+                                        placeholder="Введите телефон" name="phone">
                                     <i class="bi bi-x-circle-fill"></i>
-                                    <div class="error-message">Wrong phone number</div>
+                                    <div class="error-message"></div>
                                 </div>
                             </div>
                             <div class="mb-3 form-check">
