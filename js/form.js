@@ -27,6 +27,11 @@ function checkInput(){
     checkTextInput(email);
     if(! hasMistake){
         console.log("correct!");
+        let isSer = confirm("Подтвердите отправку формы");
+        if(isSer){
+            serializeForm(form);
+            deleteProducts();
+        } 
     }
 }
 
@@ -86,7 +91,27 @@ function checkTextInput(input){
     }
 }
 
+function serializeForm(formNode) {
+	const { elements } = formNode
+	const data = Array.from(elements)
+	  .filter(item => item.name != "button")
+	  .map((element) => {
+		 const { name, value } = element
+ 
+		 return { name, value }
+	  })
+	console.log(data)
+}
+
 form.addEventListener("submit", (e)=>{
     e.preventDefault();
     checkInput();
 });
+
+function deleteProducts(){
+    const cards = document.querySelectorAll(".product-card");
+    for(let id = 0; id < cards.length; id++){
+        cards[id].parentNode.removeChild(cards[id]);
+    }
+    setPrice();
+}

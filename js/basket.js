@@ -15,6 +15,7 @@ deleteItems.forEach((item)=>{
 let commonPrice = 0;
 
 function checkIsEmpty(){
+    console.log(counters.length)
     if(counters.length == 0){
         console.log("Empty!");
         const img = document.querySelector(".empty");
@@ -34,7 +35,7 @@ function disableForm(){
     form.flexRadio[0].disabled = true;
     form.flexRadio[1].disabled = true;
     form.email.disabled = true;
-    form.tel.disabled = true;
+    form.phone.disabled = true;
     form.btn.disabled = true;
 }
 
