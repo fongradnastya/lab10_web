@@ -176,17 +176,25 @@
                             <h2>Оформление заказа</h2>
                             <h6 class="warning">Для оформления заказа добавьте товары в корзину!</h6>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" name="email">
-                                <label for="exampleInputEmail1" class="form-label">Mobile phone</label>
-                                <input type="tel" class="form-control" id="inputTel"
-                                    aria-describedby="phonelHelp" name="tel">
+                                <label for="exampleInputEmail1" class="form-label">Email адрес</label>
+                                <div class="group">
+                                    <input type="email" class="form-control email input-success" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" name="email" placeholder="Введите email">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <div class="error-message"></div>
+                                </div>
+                                <label for="exampleInputEmail1" class="form-label">Номер телефона</label>
+                                <div class="group">
+                                    <input type="tel" class="form-control tel input-mistake" id="inputTel"aria-describedby="phonelHelp"
+                                        placeholder="Введите телефон" name="tel">
+                                    <i class="bi bi-x-circle-fill"></i>
+                                    <div class="error-message">Wrong phone number</div>
+                                </div>
                             </div>
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="check1" name="check">
                                 <label class="form-check-label" for="exampleCheck1">Самовывоз из магазина</label>
-                                <select class="form-select" aria-label="Default select example" name="deliveryAdress">
+                                <select class="form-select addres" aria-label="Default select example" name="deliveryAdress">
                                     <option selected>Выберете адрес доставки</option>
                                     <option value="1">Филиал №1</option>
                                     <option value="2">Филиал №2</option>
