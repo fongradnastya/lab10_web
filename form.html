@@ -194,13 +194,16 @@
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="check1" name="check">
                                 <label class="form-check-label" for="exampleCheck1">Самовывоз из магазина</label>
-                                <select class="form-select addres" aria-label="Default select example" name="deliveryAdress">
-                                    <option selected>Выберете адрес доставки</option>
-                                    <option value="1">Филиал №1</option>
-                                    <option value="2">Филиал №2</option>
-                                    <option value="3">Филиал №3</option>
-                                    <option value="4">Филиал №4</option>
-                                </select>
+                                <div class="group-choose">
+                                    <select class="form-select addres" aria-label="Default select example" name="deliveryAdress">
+                                        <option selected>Выберите адрес доставки</option>
+                                        <option value="1">Филиал №1</option>
+                                        <option value="2">Филиал №2</option>
+                                        <option value="3">Филиал №3</option>
+                                        <option value="4">Филиал №4</option>
+                                    </select>
+                                    <div class="error-message"></div>
+                                </div>
                             </div>
                             <div class="form-pay">
                                 <h5>Способ оплаты:</h5>
