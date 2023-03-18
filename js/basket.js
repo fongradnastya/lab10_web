@@ -2,7 +2,6 @@ const basketPrise = document.querySelector(".price");
 const headerPrice = document.querySelector(".header__prise");
 const deleteItems = document.querySelectorAll(".trash");
 const counters = document.getElementsByClassName("counter");
-console.log(counters);
 
 deleteItems.forEach((item)=>{
     item.addEventListener("click", function (event){
@@ -15,9 +14,7 @@ deleteItems.forEach((item)=>{
 let commonPrice = 0;
 
 function checkIsEmpty(){
-    console.log(counters.length)
     if(counters.length == 0){
-        console.log("Empty!");
         const img = document.querySelector(".empty");
         const commonPrice = document.querySelector(".common-price");
         const message = document.querySelector(".warning");
@@ -43,7 +40,6 @@ function setPrice(){
     commonPrice = 0;
     Array.prototype.forEach.call(counters, function(item){
         let quantity = item.value;
-        console.log(quantity);
         const card = item.closest(".card");
         const itemPriceTag = card.querySelector(".card-price");
         let itemPrice = Number(itemPriceTag.textContent.trim().slice(0, -3));

@@ -1,9 +1,5 @@
 const form = document.forms.main;
-console.log(form);
-
 const checkBox = form.check;
-console.log(checkBox.value);
-console.log(checkBox.checked);
 const addres = form.deliveryAdress;
 
 checkBox.addEventListener("change", function(){
@@ -23,10 +19,9 @@ function checkInput(){
     hasMistake = false;
     checkAddres();
     checkSize();
-    checkTextInput(phone);
     checkTextInput(email);
+    validPhone();
     if(! hasMistake){
-        console.log("correct!");
         let isSer = confirm("Подтвердите отправку формы");
         if(isSer){
             serializeForm(form);
@@ -55,7 +50,6 @@ function checkAddres(){
 
 function checkSize(){
     let sizeInputs = form.size;
-    console.log(sizeInputs);
     for(let id = 0; id < sizeInputs.length; id++){
         if(sizeInputs[id].value == "Размер"){
             sizeInputs[id].classList.add("input-mistake");
@@ -87,14 +81,44 @@ function checkTextInput(input){
         input.classList.add("input-success");
         message.textContent = "";
         icon.classList.remove("bi-x-circle-fill");
-        icon.classList.add("bi-check-circle-fill")
+        icon.classList.add("bi-check-circle-fill");
     }
+}
+
+function validPhone() {
+    var re = /^((\+7|7|8)+([0-9]){10})$/;
+    var myPhone = phone.value.trim();
+    const group = phone.closest(".group");
+    const message = group.querySelector(".error-message");
+    const icon = group.querySelector(".bi");
+    var valid = re.test(myPhone);
+    if (!valid){
+        phone.classList.add("input-mistake");
+        phone.classList.remove("input-success");
+        hasMistake = true;
+        icon.classList.add("bi-x-circle-fill");
+        icon.classList.remove("bi-check-circle-fill")
+        if(myPhone == ""){
+            message.textContent = "Поле не заполнено";
+        }
+        else{
+            message.textContent = "Неверный формат номера";
+        }
+    }
+    else{
+        phone.classList.remove("input-mistake");
+        phone.classList.add("input-success");
+        message.textContent = "";
+        icon.classList.remove("bi-x-circle-fill");
+        icon.classList.add("bi-check-circle-fill");
+    }
+    return valid;
 }
 
 function serializeForm(formNode) {
 	const { elements } = formNode
 	const data = Array.from(elements)
-	  .filter(item => item.name != "button")
+	  .filter(item => item.name != "btn")
 	  .map((element) => {
 		 const { name, value } = element
  
@@ -115,3 +139,5 @@ function deleteProducts(){
     }
     setPrice();
 }
+
+  

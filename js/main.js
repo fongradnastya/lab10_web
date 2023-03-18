@@ -23,7 +23,6 @@ limitedImg.addEventListener("click", swapImages, false);
 
 const basketPrise = document.querySelector(".header__prise");
 const productsAdd = document.querySelectorAll(".popular__link");
-console.log(basketPrise.textContent);
 basketPrise.textContent = 0 + " р.";
 
 let commonPrice = 0;
@@ -35,7 +34,6 @@ productsAdd.forEach((item)=>{
         let price = Number(productPrice.textContent.trim().slice(0, -3));
         commonPrice += price;
         basketPrise.textContent = commonPrice + " р.";
-        console.log(price);
     })
 })
 
