@@ -23,7 +23,19 @@ function checkIsEmpty(){
         img.style.display = "block";
         commonPrice.style.display = "none";
         message.style.display = "block";
+        disableForm();
     }
+}
+
+function disableForm(){
+    form.check.checked = false;
+    form.deliveryAdress.style.display = "none";
+    form.check.disabled = true;
+    form.flexRadio[0].disabled = true;
+    form.flexRadio[1].disabled = true;
+    form.email.disabled = true;
+    form.tel.disabled = true;
+    form.btn.disabled = true;
 }
 
 function setPrice(){
